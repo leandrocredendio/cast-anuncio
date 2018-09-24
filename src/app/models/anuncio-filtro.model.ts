@@ -1,6 +1,6 @@
 export class AnuncioFiltro {
 
     constructor(
-        public tipo: number,
+        public tipo: string,
         public nome: string){}
 }

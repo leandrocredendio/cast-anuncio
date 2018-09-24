@@ -11,7 +11,6 @@ import { AnuncioFiltro } from '../models/anuncio-filtro.model';
 export class AnuncioService {
 
   private anuncioUrl: string;
-
   anuncio: Anuncio;
 
   constructor(private http: HttpClient) { 
@@ -36,9 +35,8 @@ export class AnuncioService {
     return this.http.post(this.anuncioUrl, anuncio);
   }
 
-  public find(anuncioFiltro : AnuncioFiltro): Observable<Anuncio[]>{
-    console.log(anuncioFiltro);
-    let parametros: string = "";
+  public findByFiltros(anuncioFiltro : AnuncioFiltro): Observable<Anuncio[]>{
+    /*let parametros: string = "";
     if (anuncioFiltro.tipo != null) {
       parametros = "tipo=" + anuncioFiltro.tipo;
     } else {
@@ -48,13 +46,26 @@ export class AnuncioService {
       if (parametros != "") {
         parametros = parametros + "&";
       }
-      parametros = parametros + "nome=" + anuncioFiltro.nome;
+      parametros = parametros + "nome_like=" + anuncioFiltro.nome;
     }
     if (parametros != "") {
       parametros = "?" + parametros;
     }
     console.log(parametros);
-    return this.http.get<Anuncio[]>(this.anuncioUrl + parametros);
+    return this.http.get<Anuncio[]>(this.anuncioUrl + parametros);*/
+    
+    let filtros = '?';
+    if (anuncioFiltro.tipo != null && anuncioFiltro.tipo != "null") {
+      filtros = filtros + 'tipo=' + anuncioFiltro.tipo + '&';
+    } 
+    if (anuncioFiltro.nome != null) {
+      filtros = filtros + 'nome_like=' + anuncioFiltro.nome;
+    }
+    return this.http.get<Anuncio[]>(this.anuncioUrl + filtros);
+  }
+
+  public findAll(): Observable<Anuncio[]> {
+    return this.http.get<Anuncio[]>(this.anuncioUrl);
   }
 
 }

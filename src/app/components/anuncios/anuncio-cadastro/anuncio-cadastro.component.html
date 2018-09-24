@@ -16,7 +16,7 @@
           <label for="tipo">&nbsp;&nbsp;Tipo de Anúncio *</label>
           <select class="form-control" formControlName="tipo">
             <option [value]=null>Selecione</option>
-            <option *ngFor="let tipo of tipoAnuncio | async" [value]="tipo.id">{{tipo.nome}}</option>
+            <option *ngFor="let tipo of tipoAnuncio | async" [value]="tipo.nome">{{tipo.nome}}</option>
           </select>
           <div class="alert alert-danger" role="alert" *ngIf="campoValido('tipo')">O campo tipo é obrigatório</div>
         </div>
