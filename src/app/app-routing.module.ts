@@ -13,7 +13,10 @@ const ROTAS: Routes = [
   { path: 'anuncios', 
         children: [
           { path: '', component: AnuncioConsultaComponent },
-          { path: 'add', component: AnuncioCadastroComponent }
+          //localhost:4200/anuncios/add
+          { path: 'add', component: AnuncioCadastroComponent },
+          //localhost:4200/anuncios/edit/id
+          { path: 'edit/:id', component: AnuncioCadastroComponent }
         ] 
   },
   { path: '**', component: NotfoundComponent }
