@@ -1,0 +1,37 @@
+{
+  "tipos": [
+    {
+      "id": 1,
+      "nome": "Veículos",
+      "decricao": "Carro, Moto e Caminhões"
+    },
+    {
+      "id": 2,
+      "nome": "Imovéis",
+      "decricao": "Casas, Apartamentos e Terrenos"
+    },
+    {
+      "id": 3,
+      "nome": "Outros",
+      "decricao": "Relógios, Celulares e Vídeo Games"
+    }
+  ],
+  "anuncios": [
+    {
+      "tipo": "1",
+      "nome": "Leandro",
+      "descricao": "ghgh",
+      "valor": "150",
+      "contato": "ghgh",
+      "id": 1
+    },
+    {
+      "tipo": "1",
+      "nome": "Robinsonnnnnnn",
+      "descricao": "jgjhj",
+      "valor": "676",
+      "contato": "ghghghgh",
+      "id": 2
+    }
+  ]
+}
