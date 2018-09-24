@@ -41,6 +41,8 @@ export class AnuncioService {
     let parametros: string = "";
     if (anuncioFiltro.tipo != null) {
       parametros = "tipo=" + anuncioFiltro.tipo;
+    } else {
+      parametros = "";
     }
     if (anuncioFiltro.nome != null) {
       if (parametros != "") {
