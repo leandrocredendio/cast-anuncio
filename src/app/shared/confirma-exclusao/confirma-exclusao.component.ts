@@ -12,6 +12,7 @@ export class ConfirmaExclusaoComponent implements OnInit {
   @Input("textoModal") textoModal: string;
 
   @Output() eventoModalExcluir: EventEmitter<number> = new EventEmitter();
+  @Output() eventoModalCancelar: EventEmitter<string> = new EventEmitter();
 
   constructor(private anuncioService: AnuncioService) { }
 
@@ -20,6 +21,10 @@ export class ConfirmaExclusaoComponent implements OnInit {
 
   public excluir(): void {
     this.eventoModalExcluir.emit(this.idExclusao);
+  }
+
+  public cancelar() {
+    this.eventoModalCancelar.emit("Cancelado!");
   }
 
 }

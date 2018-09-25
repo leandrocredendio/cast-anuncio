@@ -63,8 +63,14 @@ export class AnuncioConsultaComponent implements OnInit {
 
   public excluirAnuncio(idExclusao: number): void {
     this.anuncioService.delete(idExclusao).subscribe(resultado => {
-      this.pesquisarTudo();
+      this.pesquisarTudo(); //ou conforme abaixo, mas precisa receber o objeto
+      //this.anuncios.splice(this.anuncios.indexOf(this.anuncioSelecionado), 1);
+      alert("Anúncio removido com sucesso " + idExclusao);
     }); 
+  }
+
+  public cancelarAnuncio(mensagem: string): void {
+    console.log(mensagem);
   }
 
 }
