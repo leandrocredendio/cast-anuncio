@@ -28,9 +28,7 @@ export class AnuncioConsultaComponent implements OnInit {
 
   ngOnInit() {
     this.tipos = this.tipoAnuncioService.findAll();
-    this.anuncioService.findAll().subscribe(resultado => {
-      this.anuncios = resultado;
-    }); 
+    this.pesquisarTudo();
     this.createFormGroup();
   }
 
@@ -46,6 +44,21 @@ export class AnuncioConsultaComponent implements OnInit {
     this.anuncioService.findByFiltros(this.anuncioFiltro).subscribe(resultado => {
       this.anuncios = resultado;
     }); 
+  }
+
+  public pesquisarTudo(): void {
+    this.anuncioService.findAll().subscribe(resultado => {
+      this.anuncios = resultado;
+    });
+  }
+
+  public apagar(id: number): void {
+    if (confirm("Deseja excluir o anúncio de código: " + id)) {
+      this.anuncioService.delete(id).subscribe(resultado => {
+        alert("Anúncio removido com sucesso " + id);
+        this.pesquisarTudo();
+      });  
+    }
   }
 
 }
