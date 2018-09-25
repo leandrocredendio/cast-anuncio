@@ -2,29 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { AppRoutingModule } from './/app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { CurrencyMaskModule } from "ng2-currency-mask";
-import { NgxMaskModule } from 'ngx-mask'
 //Configurando locale pt-BR
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 registerLocaleData(localePt, 'pt-BR');
 
 import { AppComponent } from './app.component';
-import { AnuncioConsultaComponent } from './components/anuncios/anuncio-consulta/anuncio-consulta.component';
-import { AnuncioCadastroComponent } from './components/anuncios/anuncio-cadastro/anuncio-cadastro.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import ErrorHttpInterceptor from './utils/interceptors/error-http-interceptor';
-import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AnuncioConsultaComponent,
-    AnuncioCadastroComponent,
     HeaderComponent,
     FooterComponent,
     HomeComponent,
@@ -33,12 +25,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule,
-    CurrencyMaskModule,
-    NgxMaskModule.forRoot(),
-    NgxPaginationModule
+    HttpClientModule
   ],
   providers: [
     {

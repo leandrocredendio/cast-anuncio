@@ -19,6 +19,9 @@ export class AnuncioConsultaComponent implements OnInit {
   formulario: FormGroup;
   anuncioFiltro: AnuncioFiltro;
   anuncios: Anuncio[];
+  idAnuncio: number;
+  nomeAnuncio: string;
+  exibeExclusao: boolean = false;
   p: number = 1;
 
   constructor(
@@ -52,13 +55,16 @@ export class AnuncioConsultaComponent implements OnInit {
     });
   }
 
-  public apagar(id: number): void {
-    if (confirm("Deseja excluir o anúncio de código: " + id)) {
-      this.anuncioService.delete(id).subscribe(resultado => {
-        alert("Anúncio removido com sucesso " + id);
-        this.pesquisarTudo();
-      });  
-    }
+  public confirmaExclusao(anuncio: Anuncio): void {
+    this.idAnuncio = anuncio.id;
+    this.nomeAnuncio = anuncio.nome;
+    this.exibeExclusao = true;
+  }
+
+  public excluirAnuncio(idExclusao: number): void {
+    this.anuncioService.delete(idExclusao).subscribe(resultado => {
+      this.pesquisarTudo();
+    }); 
   }
 
 }
