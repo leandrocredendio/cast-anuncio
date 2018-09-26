@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Anuncio } from '../../models/anuncio.model';
+import { AnuncioService } from '../../services/anuncio.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  anuncios: Anuncio[];
+
+  constructor(private anuncioService: AnuncioService) { }
 
   ngOnInit() {
+    this.anuncioService.findAll().subscribe(resultado => {
+      this.anuncios = resultado;
+    });
   }
 
 }

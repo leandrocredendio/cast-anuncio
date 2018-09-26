@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { TipoAnuncioService } from '../../../services/tipo-anuncio.service';
 import { TipoAnuncio } from '../../../models/tipo-anuncio.model';
 import { Observable } from 'rxjs';
@@ -22,8 +22,11 @@ export class AnuncioCadastroComponent implements OnInit {
   formulario: FormGroup;
   anuncio: Anuncio;
   imagem: Imagem;
+
   id: any;
   labelButton: string = "Salvar"
+
+  @ViewChild("inputFile") componenteImagem: ElementRef;
 
   constructor(
               private router: Router,
@@ -100,6 +103,9 @@ export class AnuncioCadastroComponent implements OnInit {
 
   //Inclusão de anúncios na API
   public salvar(): void {
+    //@viewChild para obter referência input-file 
+    //console.log(this.componenteImagem.nativeElement.files); 
+
     if (this.formulario.valid) {
 
       this.anuncio = JSON.parse(JSON.stringify(this.formulario.value));
