@@ -1,0 +1,9 @@
+<div class="card" id="anuncio1">
+  <img class="card-img-top" *ngIf="anuncioHome.imagem" src="{{anuncioHome.imagem.value}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{anuncioHome.nome}}</h5>
+    <p class="card-text">{{anuncioHome.descricao}}</p>
+    <p class="card-text">{{anuncioHome.valor | currency: 'BRL': 'R$':'2.2-4' }}</p>
+    <p class="card-text">{{anuncioHome.contato | telefone }}</p>
+  </div>
+</div>
