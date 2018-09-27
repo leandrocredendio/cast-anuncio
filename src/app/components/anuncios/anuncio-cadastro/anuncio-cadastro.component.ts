@@ -110,7 +110,11 @@ export class AnuncioCadastroComponent implements OnInit {
 
       this.anuncio = JSON.parse(JSON.stringify(this.formulario.value));
       //this.anuncio.id = this.id;
-      this.anuncio.imagem = this.imagem;
+      if (this.anuncio.imagem == null) {
+        this.anuncio.imagem = Constants.DEFAULT_IMAGEM;
+      } else {
+        this.anuncio.imagem = this.imagem;
+      }
 
       if(this.id == undefined) {
         //Inclusão de anúncios na api
