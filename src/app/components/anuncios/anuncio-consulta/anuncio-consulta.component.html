@@ -53,7 +53,7 @@
                   <td>{{anuncio.nome}}</td>
                   <td>{{anuncio.valor | currency: 'BRL': 'R$':'2.2-4' }}</td>
                   <td class="center">
-                    <button type="submit" class="btn btn-secundary"><i class="fa fa-eye"></i>&nbsp;Visualizar</button>
+                    <button type="submit" class="btn btn-secundary" data-toggle="modal" data-target="#modalVisualizar" (click)="visualizarAnuncio(anuncio)"><i class="fa fa-eye"></i>&nbsp;Visualizar</button>
                     &nbsp;
                     <button type="submit" class="btn btn-primary" [routerLink]="['edit', anuncio.id]"><i class="fa fa-edit"></i>&nbsp;Alterar</button>
                     &nbsp;
@@ -81,3 +81,5 @@
                         (eventoModalExcluir)="excluirAnuncio($event)"
                         (eventoModalCancelar)="cancelarAnuncio($event)"
                         #componenteExclusao></app-confirma-exclusao>
+<app-visualizar-anuncio *ngIf="exibeVisualizar"
+                        [anuncio]="anuncio"></app-visualizar-anuncio>

@@ -20,9 +20,11 @@ export class AnuncioConsultaComponent implements OnInit {
   formulario: FormGroup;
   anuncioFiltro: AnuncioFiltro;
   anuncios: Anuncio[];
+  anuncio: Anuncio;
   idAnuncio: number;
   nomeAnuncio: string;
   exibeExclusao: boolean = false;
+  exibeVisualizar: boolean = false;
   p: number = 1;
 
   @ViewChild(ConfirmaExclusaoComponent) componenteExclusao: ConfirmaExclusaoComponent;
@@ -76,6 +78,11 @@ export class AnuncioConsultaComponent implements OnInit {
 
   public cancelarAnuncio(mensagem: string): void {
     console.log(mensagem);
+  }
+
+  public visualizarAnuncio(anuncio: Anuncio): void {
+    this.anuncio = anuncio;
+    this.exibeVisualizar = true;
   }
 
 }

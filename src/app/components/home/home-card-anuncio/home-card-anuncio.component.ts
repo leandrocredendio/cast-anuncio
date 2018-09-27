@@ -8,7 +8,7 @@ import { Anuncio } from '../../../models/anuncio.model';
 })
 export class HomeCardAnuncioComponent implements OnInit {
 
-  @Input("anuncioHome") anuncioHome: Anuncio;
+  @Input("anuncio") anuncio: Anuncio;
 
   constructor() { }
 

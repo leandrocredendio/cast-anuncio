@@ -1,9 +1,9 @@
 <div class="card" id="anuncio1">
-  <img class="card-img-top" *ngIf="anuncioHome.imagem" src="{{anuncioHome.imagem.value}}" alt="Card image cap">
+  <img class="card-img-top" *ngIf="anuncio.imagem" src="{{anuncio.imagem.value}}" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">{{anuncioHome.nome}}</h5>
-    <p class="card-text">{{anuncioHome.descricao}}</p>
-    <p class="card-text">{{anuncioHome.valor | currency: 'BRL': 'R$':'2.2-4' }}</p>
-    <p class="card-text">{{anuncioHome.contato | telefone }}</p>
+    <h5 class="card-title">{{anuncio.nome}}</h5>
+    <p class="card-text">{{anuncio.descricao}}</p>
+    <p class="card-text">{{anuncio.valor | currency: 'BRL': 'R$':'2.2-4' }}</p>
+    <p class="card-text">{{anuncio.contato | telefone }}</p>
   </div>
 </div>

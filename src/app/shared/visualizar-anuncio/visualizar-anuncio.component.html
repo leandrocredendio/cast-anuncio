@@ -1,0 +1,23 @@
+<div id="modalVisualizar" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content"> 
+      <div class="modal-header"> 
+        <h4 class="modal-title">Vizualizar anúncio</h4>
+      </div>
+      <!-- model body section -->
+      <div class="modal-body">
+        <div class="center">
+          <img class="img-fluid" *ngIf="anuncio.imagem" src="{{anuncio.imagem.value}}" alt="Card image cap">
+        </div>
+        <h5 class="card-title">{{anuncio.nome}}</h5>
+        <p class="card-text">{{anuncio.descricao}}</p>
+        <p class="card-text">{{anuncio.valor | currency: 'BRL': 'R$':'2.2-4' }}</p>
+        <p class="card-text">{{anuncio.contato | telefone }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" >Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>

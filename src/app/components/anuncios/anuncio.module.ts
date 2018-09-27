@@ -9,6 +9,8 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { NgxMaskModule } from 'ngx-mask';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ConfirmaExclusaoModule } from '../../shared/confirma-exclusao/confirma-exclusao.module';
+import { VisualizarAnuncioModule } from '../../shared/visualizar-anuncio/visualizar-anuncio.module';
+import { TelefonePipe } from '../../utils/pipes/telefone.pipe';
 
 @NgModule({
   imports: [
@@ -19,7 +21,8 @@ import { ConfirmaExclusaoModule } from '../../shared/confirma-exclusao/confirma-
     CurrencyMaskModule,
     NgxMaskModule.forRoot(),
     NgxPaginationModule,
-    ConfirmaExclusaoModule
+    ConfirmaExclusaoModule,
+    VisualizarAnuncioModule
   ],
   declarations: [
     AnuncioConsultaComponent,
