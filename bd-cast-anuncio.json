@@ -34,17 +34,9 @@
       "id": 10
     },
     {
-      "tipo": "Imovéis",
-      "nome": "Testettets",
-      "descricao": "Teste",
-      "valor": 54.54,
-      "contato": "16999999999",
-      "id": 11
-    },
-    {
       "id": 12,
       "tipo": "Veículos",
-      "nome": "teste 3",
+      "nome": "teste 4",
       "descricao": "teste 3",
       "valor": 1.5,
       "contato": "16999999999",
