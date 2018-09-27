@@ -10,7 +10,6 @@ import { NgxMaskModule } from 'ngx-mask';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ConfirmaExclusaoModule } from '../../shared/confirma-exclusao/confirma-exclusao.module';
 import { VisualizarAnuncioModule } from '../../shared/visualizar-anuncio/visualizar-anuncio.module';
-import { TelefonePipe } from '../../utils/pipes/telefone.pipe';
 
 @NgModule({
   imports: [

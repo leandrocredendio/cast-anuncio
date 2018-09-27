@@ -1,5 +1,9 @@
 
-.cardHover {
+  a {
+    text-decoration: none;
+  }
+
+  .cardHover {
     transition: font-size 0.5s ease-out, border 0.5s ease-out, background-color 0.5s, color 0.5s;
   }
 

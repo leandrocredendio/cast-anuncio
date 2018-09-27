@@ -14,8 +14,9 @@ import { HomeComponent } from './components/home/home.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import ErrorHttpInterceptor from './utils/interceptors/error-http-interceptor';
 import { HomeCardAnuncioComponent } from './components/home/home-card-anuncio/home-card-anuncio.component';
-import { TelefonePipe } from './utils/pipes/telefone.pipe';
-import { TelefoneModule } from './utils/pipes/telefone.module';
+import { VisualizarAnuncioModule } from './shared/visualizar-anuncio/visualizar-anuncio.module';
+import { ShortDescriptionModule } from './utils/pipes/shortDescription/short-description.module';
+import { TelefoneModule } from './utils/pipes/telefone/telefone.module';
 
 @NgModule({
   declarations: [
@@ -24,13 +25,15 @@ import { TelefoneModule } from './utils/pipes/telefone.module';
     FooterComponent,
     HomeComponent,
     NotfoundComponent,
-    HomeCardAnuncioComponent 
+    HomeCardAnuncioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    TelefoneModule
+    TelefoneModule,
+    ShortDescriptionModule,
+    VisualizarAnuncioModule
   ],
   providers: [
     {

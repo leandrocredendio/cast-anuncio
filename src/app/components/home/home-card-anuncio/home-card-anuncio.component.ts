@@ -9,10 +9,16 @@ import { Anuncio } from '../../../models/anuncio.model';
 export class HomeCardAnuncioComponent implements OnInit {
 
   @Input("anuncio") anuncio: Anuncio;
+  exibeVisualizar: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public visualizarAnuncio(anuncio: Anuncio): void {
+    this.anuncio = anuncio;
+    this.exibeVisualizar = true;
   }
 
 }
