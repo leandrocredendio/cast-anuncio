@@ -9,19 +9,22 @@ import { VisualizarAnuncioComponent } from '../../../shared/visualizar-anuncio/v
 })
 export class HomeCardAnuncioComponent implements OnInit {
 
-  @Input("anuncio") anuncio: Anuncio;
+  @Input('anuncio') anuncio: Anuncio;
+  @Input('index') index: number;
   exibeVisualizar: boolean = false;
 
-  constructor() { }
+  constructor() {
+    
+  }
 
   ngOnInit() {
   }
 
-  public visualizarAnuncio(anuncio: Anuncio): void {
-    console.log("1 -> " + anuncio.id + " - " + this.anuncio.id);
-    this.anuncio = anuncio;
-    console.log("2 -> " + anuncio.id + " - " + this.anuncio.id);
-    this.exibeVisualizar = true;
+  public visualizarAnuncio(): void {
+    console.log(this.anuncio)
+   this.exibeVisualizar = true;
+   console.log(this.index);
+    console.log("Clique no anuncio: " + this.anuncio.id);
   }
 
 }

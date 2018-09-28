@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ComponentRef } from '@angular/core';
 import { Anuncio } from '../../models/anuncio.model';
 
 @Component({
@@ -13,6 +13,11 @@ export class VisualizarAnuncioComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.anuncio)
+  }
+
+  public fechar() {
+    console.log("Botão fechar antes: " + this.anuncio.id);
   }
 
 }

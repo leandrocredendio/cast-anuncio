@@ -6,9 +6,7 @@
   <hr />
   <div class="container">
     <div class="card-deck centralizar">
-      <div *ngFor="let anuncio of anuncios" >
-        <app-home-card-anuncio [anuncio]="anuncio"></app-home-card-anuncio>
-      </div>
+        <app-home-card-anuncio *ngFor="let anuncio of anuncios" [anuncio]="anuncio"></app-home-card-anuncio>
     </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 <div class="card cardHover" id="anuncio1">
-  <a data-toggle="modal" href="#modalVisualizar" (click)="visualizarAnuncio(anuncio)">
+  <a data-toggle="modal" href="#modalVisualizar" (click)="visualizarAnuncio()">
     <img class="card-img-top" *ngIf="anuncio.imagem" src="{{anuncio.imagem.value}}" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">{{anuncio.descricao | shortDescription }}</h5>
