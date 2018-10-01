@@ -9,7 +9,7 @@ import { TelefoneModule } from '../../utils/pipes/telefone/telefone.module';
     TelefoneModule
   ],
   declarations: [
-    VisualizarAnuncioComponent,
+    VisualizarAnuncioComponent
   ],
   exports: [
     VisualizarAnuncioComponent

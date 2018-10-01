@@ -64,6 +64,15 @@
         </div>
       </div>
       <div class="row">
+        <div class="form-group col-md-6">
+          <label for="destaque">&nbsp;&nbsp;Destaque </label>
+          <input 
+            id="destaque"
+            type="checkbox"
+            formControlName="destaque">
+        </div>
+      </div>
+      <div class="row">
         <div class="form-group col-md-4">
           <label for="file">&nbsp;&nbsp;Coloque uma imagem</label>
           <input  cass="form-control" id="input-file" type="file" (change)="onSelectFile($event)" #inputFile>

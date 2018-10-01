@@ -5,10 +5,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ShortDescriptionPipe implements PipeTransform {
 
-  transform(valueDescricao: any, args?: any): any {
+  transform(valueDescricao: any, limite: number): any {
 
-    if (valueDescricao.length > 20) {
-      valueDescricao = valueDescricao.slice(0 , 20);
+    if (valueDescricao.length > limite) {
+      valueDescricao = valueDescricao.slice(0 , limite);
       valueDescricao = valueDescricao + '...';
       return valueDescricao;
 

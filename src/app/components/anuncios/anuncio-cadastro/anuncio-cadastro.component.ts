@@ -77,7 +77,8 @@ export class AnuncioCadastroComponent implements OnInit {
       nome: [null, Validators.required],
       descricao: [null, Validators.required],
       valor: [null, Validators.required],
-      contato: [null, Validators.required]
+      contato: [null, Validators.required],
+      destaque: [false]
     });
   }
 
@@ -110,7 +111,7 @@ export class AnuncioCadastroComponent implements OnInit {
 
       this.anuncio = JSON.parse(JSON.stringify(this.formulario.value));
       //this.anuncio.id = this.id;
-      if (this.anuncio.imagem == null) {
+      if (this.anuncio.imagem == null && this.imagem == null) {
         this.anuncio.imagem = Constants.DEFAULT_IMAGEM;
       } else {
         this.anuncio.imagem = this.imagem;
