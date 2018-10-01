@@ -11,4 +11,5 @@
   </a>
 </div>
 <app-visualizar-anuncio *ngIf="exibeVisualizar"
-                        [anuncio]="anuncio"></app-visualizar-anuncio>
+                        [anuncio]="anuncio"
+                        (eventoFechar)=fechar($event)></app-visualizar-anuncio>

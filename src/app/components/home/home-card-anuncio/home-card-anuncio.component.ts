@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Output } from '@angular/core';
 import { Anuncio } from '../../../models/anuncio.model';
 import { VisualizarAnuncioComponent } from '../../../shared/visualizar-anuncio/visualizar-anuncio.component';
 
@@ -21,10 +21,11 @@ export class HomeCardAnuncioComponent implements OnInit {
   }
 
   public visualizarAnuncio(): void {
-    console.log(this.anuncio)
    this.exibeVisualizar = true;
-   console.log(this.index);
-    console.log("Clique no anuncio: " + this.anuncio.id);
+  }
+
+  public fechar(eventoFechar: boolean) {
+    this.exibeVisualizar = eventoFechar;    
   }
 
 }
