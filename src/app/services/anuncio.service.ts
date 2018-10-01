@@ -80,4 +80,12 @@ export class AnuncioService {
     return this.http.get<Anuncio>(this.anuncioUrl + "?id=" + id);
   }
 
+  public findByNome(texto: string): any {
+    return this.http.get<Anuncio[]>(this.anuncioUrl + '?nome_like=' + texto);
+  }
+
+  public findByDescricao(texto: string): any {
+    return this.http.get<Anuncio[]>(this.anuncioUrl + '?descricao_like=' + texto);
+  }
+
 }

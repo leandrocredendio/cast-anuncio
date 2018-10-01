@@ -4,11 +4,22 @@
       <div class="row">
         <div class="col-lg-5 col-md-6">
           <a class="navbar-brand">
-            <img src="/assets/logo.jpg" />
+            <img src="./assets/logo.jpg" />
           </a>
         </div>
         <div class="col-lg-7 col-md-6">
-          <input type="text" class="form-control buscaAjuste" placeholder="Pesquise aqui..." />
+          <input type="text" 
+                 class="form-control buscaAjuste"
+                 placeholder="Pesquise aqui..."
+                 (keyup)="pesquisa(termoDaPesquisa.value)"
+                 #termoDaPesquisa />
+          <ul class="list-group" style="position: absolute; z-index: 999">
+            <li class="list-group-item" *ngFor="let anuncio of anuncios | async">
+              <a data-toggle="modal" href="#modalVisualizar" (click)="visualizarAnuncio(anuncio)">
+                {{ anuncio.descricao | shortDescription: 10}}
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -27,3 +38,6 @@
     </div>
   </div>
 </div>
+<app-visualizar-anuncio *ngIf="exibeVisualizar"
+                        [anuncio]="anuncio"
+                        (eventoFechar)=fechar($event)></app-visualizar-anuncio>
