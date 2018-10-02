@@ -12,11 +12,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
-import ErrorHttpInterceptor from './utils/interceptors/error-http-interceptor';
 import { HomeCardAnuncioComponent } from './components/home/home-card-anuncio/home-card-anuncio.component';
 import { VisualizarAnuncioModule } from './shared/visualizar-anuncio/visualizar-anuncio.module';
 import { ShortDescriptionModule } from './utils/pipes/shortDescription/short-description.module';
 import { TelefoneModule } from './utils/pipes/telefone/telefone.module';
+import { ErrorHttpInterceptor } from './utils/interceptors/error-http-interceptor';
+//import ErrorHttpInterceptor from './utils/interceptors/error-http-interceptor';
 
 @NgModule({
   declarations: [
